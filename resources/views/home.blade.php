@@ -161,7 +161,7 @@
                                     <div class="col-sm-6 col-lg-4">
                                         <div class="card card-sm">
                                             <!-- <a href="#" class="d-block"><img src="https://asset-a.grid.id/crop/0x0:0x0/360x240/photo/2020/04/09/663219154.png" class="card-img-top"></a> -->
-                                            <a href="#" class="d-block"><img src="img/{{ $men->photo }}" class="card-img-top"></a>
+                                            <a href="{{ url('produk/'.$men->slug) }}" class="d-block"><img src="img/{{ $men->photo }}" class="card-img-top"></a>
                                             <div class="card-body">
                                                 <div class="d-flex align-items-center">
                                                     <div>

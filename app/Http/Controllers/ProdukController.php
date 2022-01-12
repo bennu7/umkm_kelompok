@@ -24,6 +24,14 @@ class ProdukController extends Controller
         ]);
     }
 
+    function showsingle(Produk $produk)
+    {
+        return view('produk', [
+            "title" => "single produk",
+            'produk' => Produk::find($produk)
+        ]);
+    }
+
     public function index(Request $request)
     {
         $keyword = $request->keyword;
