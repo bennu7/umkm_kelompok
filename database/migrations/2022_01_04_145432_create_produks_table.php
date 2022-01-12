@@ -15,12 +15,14 @@ class CreateProduksTable extends Migration
     {
         Schema::create('produks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id');
+            // $table->foreignId('category_id');
             $table->string('nama');
             $table->string('slug')->unique();
             $table->string('deskripsi')->nullable();
             $table->integer('harga');
             $table->string('photo')->nullable();
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

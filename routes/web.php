@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('home');
 // });
 Route::get('/', [ProdukController::class, 'show']);
+
+// Route::get('/produk/{post:slug}', [ProdukController::class, 'showsingle']);
+Route::get('/produk/{slug}', [ProdukController::class, 'showsingle']);
 
 Route::get('/profile', function () {
     return view('profile');
@@ -36,3 +41,11 @@ Route::get('wome', function () {
 });
 
 Route::resource('/produks', ProdukController::class);
+// login view
+Route::get('/login', [LoginController::class, 'index']);
+// untuk login action
+Route::post('/login', [LoginController::class, 'authenticate']);
+
+Route::get('/register', [RegisterController::class, 'index']);
+
+Route::post('/register', [RegisterController::class, 'store']);

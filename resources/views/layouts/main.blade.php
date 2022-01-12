@@ -36,6 +36,7 @@
             $("#load-footer").load(base_url + "layout/navbar.php");
         });
     </script>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
