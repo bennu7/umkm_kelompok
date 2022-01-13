@@ -7,6 +7,7 @@ use App\Models\Produk;
 use App\Models\Men;
 use App\Models\Women;
 use App\Http\Requests\ProdukRequest;
+use App\Models\Category;
 // FIle => untuk membantu mengupload gambar
 use Illuminate\Support\Facades\File;
 
@@ -28,17 +29,18 @@ class ProdukController extends Controller
     {
         return view('produk', [
             "title" => "single produk",
-            'produk' => Produk::find($produk)
+            'produk' => $produk
         ]);
     }
 
     public function index(Request $request)
     {
         $keyword = $request->keyword;
-        // $datas = Produk::all();
-        $datas = Produk::where('nama', 'LIKE', '%' . $keyword . '%')
-            ->orWhere('harga', 'LIKE', '%' . $keyword . '%')
-            ->paginate();
+        $datas = Produk::simplePaginate(5);
+ 
+        // $datas = Produk::where('nama', 'LIKE', '%' . $keyword . '%')
+        //     ->orWhere('harga', 'LIKE', '%' . $keyword . '%')
+        //     ->paginate();
         // ->get();
         return view('produk.produks', compact('datas', 'keyword'), [
             "title" => "produks"
@@ -48,7 +50,9 @@ class ProdukController extends Controller
     public function create()
     {
         $model = new Produk;
-        return view('produk.create', compact('model'), [
+        $category = Category::all();
+        // dd($category);
+        return view('produk.create', compact('model', 'category'), [
             "title" => "produks"
         ]);
     }

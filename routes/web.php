@@ -22,7 +22,7 @@ use App\Http\Controllers\RegisterController;
 Route::get('/', [ProdukController::class, 'show']);
 
 // Route::get('/produk/{post:slug}', [ProdukController::class, 'showsingle']);
-Route::get('/produk/{slug}', [ProdukController::class, 'showsingle']);
+Route::get('/produk/{produk:slug}', [ProdukController::class, 'showsingle']);
 
 Route::get('/profile', function () {
     return view('profile');
