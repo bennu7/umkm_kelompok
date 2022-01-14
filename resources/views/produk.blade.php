@@ -7,7 +7,7 @@
     <div class="container-xl">
         <div class="card-body">
             <h1 class="page-tittle" style="text-align: center;">
-                Valda Dress
+                {{ $produk->nama }}
             </h1>
             <div>
                 <p style="text-align: right;">
@@ -18,7 +18,8 @@
         <div class="row row-cards">
             <div class="col-md-6">
                 <div class="span8">
-                    <div id="carousel-controls" class="carousel slide" data-bs-ride="carousel">
+                    <img src="{{ asset('img/' . $produk->photo) }}" alt="">
+                    {{-- <div id="carousel-controls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img class="d-block w-100" alt=""
@@ -44,7 +45,7 @@
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </a>
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- <div class="row">
                     <div class="col-3 col-lg-12 mt-2 mt-lg-0">
@@ -82,7 +83,7 @@
 
                     </div>
                     <div class="card-body">
-                        <h1><b>RP.445.000</b>
+                        <h1><b>Rp.{{ $produk->harga }}</b>
                             <a href="#" class="btn btn-dark btn-square w-30">
                                 Tambah
                             </a>
@@ -242,10 +243,7 @@
                     </div>
                     <div class="card-body">
                         <p>Deskripsi <br> <br>
-                            <b>INFORMASI TAMBAHAN</b> <br> <br>
-                            <b>Warna : </b> Off White <br>
-                            <b>Ukuran : </b> S,M,L,XL <br>
-                            <b>Bahan : </b> 100% Polyster
+                            {{ $produk->deskripsi }}
                         </p>
                     </div>
                     <div class="card-body">

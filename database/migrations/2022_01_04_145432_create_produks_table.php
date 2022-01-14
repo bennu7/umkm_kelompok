@@ -15,7 +15,7 @@ class CreateProduksTable extends Migration
     {
         Schema::create('produks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id');
+            $table->foreignId('category_id')->constrained('categories');
             $table->string('nama');
             $table->string('slug')->unique();
             $table->string('deskripsi')->nullable();
