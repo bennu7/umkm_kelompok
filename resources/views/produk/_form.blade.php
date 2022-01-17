@@ -3,7 +3,7 @@
                         <h3 class="card-title">Update Produk</h3>
                     </div>
                     <div class="form-group mb-3 ">
-                        <label class="form-label"  for="kategori">Kategori Prodk</label>
+                        <label class="form-label"  for="kategori">Kategori Produk</label>
                         <div>
                             <input type="text" class="form-control" id="kategori" name="kategori"  value="{{ $model->category_id }}">
                         </div>

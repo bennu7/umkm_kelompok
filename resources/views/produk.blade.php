@@ -7,7 +7,7 @@
     <div class="container-xl">
         <div class="card-body">
             <h1 class="page-tittle" style="text-align: center;">
-                Valda Dress
+                {{ $produk->nama }}
             </h1>
             <div>
                 <p style="text-align: right;">
@@ -18,39 +18,8 @@
         <div class="row row-cards">
             <div class="col-md-6">
                 <div class="span8">
-                    <div id="carousel-controls" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" alt=""
-                                    src="https://s3-alpha-sig.figma.com/img/7466/3018/1a0c3b629ece7fe34c2e3d8260fae4f1?Expires=1641772800&Signature=IW30MGRR7MpzJs~cNe9UMDdz5HXDKnS~4GdiI0lkKvOafQfNvnX06YpLB~WQahg8Dre-otEIzuRGjr5Buzc9BtZNK0lCLcvkF-xHVF1~qC6uQKzsgww3c5VwL4YKkXcY5jSC-SVIoYB7tHdP4KIFqV3YKHZQcT-eVxh1Y86PcznXG~pPWWKKH8Aq8YA10uTSr5bOvWSvCvN4THvB-p2w4QWba8EW2hBGpwUfAb2TxwqyemPtIuo58m6Bsdk2HV44SA1aW62--am7OkNuVjzLrTyxSqlWzvKM4~qzonv1toRPu5I1PpqTdDJDmdE6~7hZUm-RdT4jYD2UIhdeLBLybQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
-                                    width="700" height="700">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" alt=""
-                                    src="https://s3-alpha-sig.figma.com/img/c313/934f/ba6c89a9f7e57b13c1b59f4da0da77aa?Expires=1641772800&Signature=HBGgNpM8~c3ay0S~v8ZOVjTIj97oHHPRwPX3MwNUgrX-a2lg~EXOPD26~eXtiGVIzinPW7X8ZobosEXGy~0ZcVpmEKER387VOuLYZGttjLz4bJaG0nVjU69wFEacwanM8uJl6ESTo0VCJ1QQhv7fIIo2NiPK4nK1bgaZ-ba4NWLyCEh3NiYCSCnRcAf6bD022VnoAtcj2g8uNFN2CpRGR5gwmAoXPdYqyuIib4WjdlMvKgrYAOH2hnZ3BY~USpHzZ2dA~Ac4IJ30nNX9pPQPfGVH1q6YPttgV~5JoKDJvYxBvY8tAujOJ~oHTphXPCxD0Ygu~1N~XFoVZRDFAJj40g__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
-                                    width="700" height="700">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" alt=""
-                                    src="https://s3-alpha-sig.figma.com/img/ef89/7b62/9f9a3640f112b9df668e795ec2f76722?Expires=1641772800&Signature=dU8gb9PbvDD7GCFNFSgnxFEBhrGYm5OfWsFbsHyZTC-zdBGWjEH0fnU2PlFPJrVFlSUmP~ATP0oN9n0ffwUt5zCWqAaIfjAiC9HhB1TMMO8nw~D~djbxgcw3mf7uJzwKp~BvUZO~NmYSluGEPwi7jzVRxEH5rh5~bMT8oNAfeJ-ZOhEIAYxnoAVoo7JFyRMndglXaGMKt7uiz7hNiNVmfKcWzGpBHGy7V8GUSVWB19tY7pCyUSw3gzAGHrhX-Ddq5akWaS2XmMI87a1BGBDZquef4VWes8k0kz9lsIMeKYIng~waPNnzoq-Wim~0qXDOFHVSGWkFVXDRRLzIjBch4g__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
-                                    width="700" height="700">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carousel-controls" role="button" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carousel-controls" role="button" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </a>
-                    </div>
+                    <img src="{{ asset('img/' . $produk->photo) }}" alt="">
                 </div>
-                <!-- <div class="row">
-                    <div class="col-3 col-lg-12 mt-2 mt-lg-0">
-                        <img src="https://id-live-05.slatic.net/p/4494148e37b058d0c791d9fd9a59b151.jpg_720x720q80.jpg_.webp" alt="">
-                    </div>
-                </div> -->
             </div>
             <div class="col-md-4">
                 <div class="">
@@ -82,7 +51,7 @@
 
                     </div>
                     <div class="card-body">
-                        <h1><b>RP.445.000</b>
+                        <h1><b>Rp.{{ $produk->harga }}</b>
                             <a href="#" class="btn btn-dark btn-square w-30">
                                 Tambah
                             </a>
@@ -242,10 +211,7 @@
                     </div>
                     <div class="card-body">
                         <p>Deskripsi <br> <br>
-                            <b>INFORMASI TAMBAHAN</b> <br> <br>
-                            <b>Warna : </b> Off White <br>
-                            <b>Ukuran : </b> S,M,L,XL <br>
-                            <b>Bahan : </b> 100% Polyster
+                            {{ $produk->deskripsi }}
                         </p>
                     </div>
                     <div class="card-body">
@@ -383,7 +349,7 @@
                 </div>
             </div>
         </div>
-        <div class="row row-cards mt-5">
+        {{-- <div class="row row-cards mt-5">
             <div class="col-sm-6 col-lg-4">
                 <div class="card-sm">
                     <a href="#" class="d-block"><img
@@ -548,7 +514,7 @@
                 </li>
               </ul>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 

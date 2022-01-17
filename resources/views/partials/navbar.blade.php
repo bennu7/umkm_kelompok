@@ -5,7 +5,7 @@
         </button>
         <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
             <a href="/">
-                <img src="http://umkm.test/dist/img/logo/Insel (3).png" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+                <img src="img/logo.png" width="110" height="32" alt="Tabler" class="navbar-brand-image">
             </a>
         </h1>
         <ul class="navbar-nav mr-auto">
@@ -13,20 +13,47 @@
                 <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ ($title == 'men') ? 'active' : '' }}"  href="#">Men</a>
+                <a class="nav-link {{ ($title == 'Men') ? 'active' : '' }}"  href="/men">Men</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ ($title == 'women') ? 'active' : '' }}" href="#">Women</a>
-            </li>
-            <li class="nav-item {{ ($title == 'produks') ? 'active' : '' }}">
-                <a class="nav-link" href="/produks">Edit Produk(admin)</a>
+                <a class="nav-link {{ ($title == 'Women') ? 'active' : '' }}" href="/women">Women</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link {{ ($title == 'About') ? 'active' : '' }}" href="/about">About</a>
             </li>
         </ul>
 
-        <div class="navbar-nav flex-row order-md-last">
+        <ul class="navbar-nav ms-auto">
+            @auth
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Welcome back, {{ auth()->user()->name }}
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/profile"><i class="bi bi-layout-text-sidebar-reverse"></i>My Profile</a></li>
+                  <li><a class="dropdown-item" href="/produks"><i class="bi bi-layout-text-sidebar-reverse"></i>Edit Produk(admin)</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li>
+                    <form action="/logout" method="POST">
+                      @csrf
+                      <button type="submit" class="dropdown-item">
+                        <i class="bi bi-box-arrow-right">
+                        </i> Logout
+                      </button>
+                    </form>
+                  </li>
+                </ul>
+              </li>
+            @else
+              <li class="nav-item">
+                <a href="/login" class="nav-link  {{ ($title == "login") ? 'active' : '' }}">
+                  <i class="bi bi-box-arrow-in-right"></i>
+                  Login</a>
+              </li>
+            @endauth
+        </ul>
+
+        {{-- <div class="navbar-nav flex-row order-md-last">
             <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
                 <span class="nav-link-icon d-md-none d-lg-inline-block active">
                     <li class="nav-item {{ ($title == 'login' || 'register') ? 'active' : '' }}">
@@ -41,7 +68,7 @@
                 </div>
             </a>
 
-        </div>
+        </div> --}}
     </div>
     </div>
 </header>

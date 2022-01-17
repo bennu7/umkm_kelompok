@@ -189,7 +189,7 @@
                                 @endforeach
                                 <div class="card" style="text-align: center;">
                                     <div class="card-body">
-                                        <a href="#">Lainnya</a>
+                                        <a href="/men">Lainnya</a>
                                     </div>
                                 </div>
                             </div>
@@ -245,7 +245,7 @@
                                 
                                 <div class="card" style="text-align: center;">
                                     <div class="card-body">
-                                        <a href="#">Lainnya</a>
+                                        <a href="/women">Lainnya</a>
                                     </div>
                                 </div>
                             </div>
